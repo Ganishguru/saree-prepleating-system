@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrapeCraft | Saree Pre-Pleating & Box Folding Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Notification Bar -->
+    <div class="top-bar">
+        <span>✨ Hassle-Free Saree Draping in 2 Minutes • Pinless Box Folding • Express Muhurtham Slots Available</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand-logo" onclick="switchTab('home')">
+                <span class="brand-icon">🥻</span>
+                <div class="brand-text">
+                    <span class="brand-title">DrapeCraft</span>
+                    <span class="brand-subtitle">Pre-Pleating & Box Folding Studio</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <button class="nav-link active" data-tab="home" onclick="switchTab('home')">Home</button>
+                <button class="nav-link" data-tab="services" onclick="switchTab('services')">Services & Pricing</button>
+                <button class="nav-link" data-tab="book" onclick="switchTab('book')">Book a Saree</button>
+                <button class="nav-link" data-tab="track" onclick="switchTab('track')">Track Order</button>
+                <button class="nav-link nav-admin-btn" data-tab="admin" onclick="switchTab('admin')">Studio Portal 🔐</button>
+            </nav>
+            <div class="nav-cta">
+                <button class="btn btn-primary" onclick="switchTab('book')">Book Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- 1. HOME TAB -->
+        <section id="tab-home" class="tab-pane active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="badge-pill">Professional Saree Styling & Care</div>
+                    <h1 class="hero-heading">Wear Your Favorite Saree in <span class="highlight">Under 2 Minutes</span></h1>
+                    <p class="hero-description">
+                        Say goodbye to morning drape struggles and endless safety pins. We steam-iron, pre-pleat, and box-fold your Kanjivarams, soft silks, and designer sarees to custom height & waist specifications.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg" onclick="switchTab('book')">Book Pre-Pleating ₹250 →</button>
+                        <button class="btn btn-outline btn-lg" onclick="switchTab('track')">Track Existing Order</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1,500+</span>
+                            <span class="stat-label">Sarees Styled</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Zero-Pin Damage</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">48-Hr</span>
+                            <span class="stat-label">Express Turnaround</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-card-preview">
+                    <div class="card luxury-preview-card">
+                        <div class="preview-badge">Signature Package</div>
+                        <div class="preview-icon">✨</div>
+                        <h3>Bridal Box Fold & Pleat</h3>
+                        <p>Specially calibrated for heavy zari Kanjivarams, Organza, and Banarasi silks.</p>
+                        <ul class="preview-features">
+                            <li>✓ Personalized waist & height pleating</li>
+                            <li>✓ Laser-crisp pallu pre-pleats</li>
+                            <li>✓ Anti-wrinkle travel box packing</li>
+                            <li>✓ Zero-pin fabric preservation</li>
+                        </ul>
+                        <div class="preview-price">
+                            <span class="currency">₹</span><span class="amount">450</span>
+                            <span class="duration">/ saree</span>
+                        </div>
+                        <button class="btn btn-gold btn-block" onclick="startBookingPackage('Bridal Box Fold & Pleat', 450)">Book This Package</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="section-container">
+                <h2 class="section-title text-center">Why DrapeCraft Pre-Pleating?</h2>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>2-Minute Drape</h3>
+                        <p>Slip the skirt on, wrap the pallu over your shoulder, and you are ready for any wedding or party.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Fabric Safe & Zero Pinholes</h3>
+                        <p>Gentle steam temperature regulation suited specifically for pure silk, tissue, and delicate organza.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Ready-to-Travel Box Fold</h3>
+                        <p>Compact, rigid packaging designed to fit in carry-on luggage without getting creased.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SERVICES & PRICING TAB -->
+        <section id="tab-services" class="tab-pane">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Transparent Studio Pricing</h2>
+                    <p class="section-subtitle">No hidden charges. Fabric-specific care guaranteed.</p>
+                </div>
+
+                <div class="grid-4" id="services-grid">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+
+                <!-- Fabric Guide Table -->
+                <div class="fabric-guide-card">
+                    <h3>Fabric & Temperature Care Matrix</h3>
+                    <div class="table-responsive">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Fabric Category</th>
+                                    <th>Examples</th>
+                                    <th>Recommended Pleat Style</th>
+                                    <th>Turnaround Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Pure Silk & Zari</strong></td>
+                                    <td>Kanjivaram, Banarasi, Dharmavaram</td>
+                                    <td>Classic 5-6 wide pleats + Crisp Pallu</td>
+                                    <td>24-48 Hours</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sheer & Delicate</strong></td>
+                                    <td>Organza, Chiffon, Georgette</td>
+                                    <td>Pinless micro-pleats + soft steam fold</td>
+                                    <td>24 Hours</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Soft Drape & Tissue</strong></td>
+                                    <td>Tussar, Tissue Silk, Crepe</td>
+                                    <td>Sleek 6-7 pleats + Box fold</td>
+                                    <td>24-48 Hours</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Daily & Formal</strong></td>
+                                    <td>Cotton, Linen, Modal Silk</td>
+                                    <td>Starch steam press + knife pleats</td>
+                                    <td>24 Hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BOOKING FORM TAB -->
+        <section id="tab-book" class="tab-pane">
+            <div class="section-container max-w-800">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Book Your Saree Pre-Pleating</h2>
+                    <p class="section-subtitle">Fill in your saree details and event timeline. We will preserve and style your saree to perfection.</p>
+                </div>
+
+                <div class="booking-wizard card">
+                    <form id="saree-booking-form" onsubmit="handleBookingSubmit(event)">
+                        <!-- Step 1: Package Selection -->
+                        <div class="form-section">
+                            <h3 class="form-section-title"><span class="step-badge">1</span> Choose Service Package</h3>
+                            <div class="package-radio-grid" id="package-options-container">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Saree & Fabric Details -->
+                        <div class="form-section">
+                            <h3 class="form-section-title"><span class="step-badge">2</span> Saree & Fabric Details</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="fabricType">Fabric Type *</label>
+                                    <select id="fabricType" class="form-control" required onchange="updatePriceEstimate()">
+                                        <option value="KANJIVARAM_SILK">Kanjivaram Silk (Pure Zari)</option>
+                                        <option value="BANARASI_SILK">Banarasi Silk</option>
+                                        <option value="SOFT_SILK">Soft Silk / Tussar</option>
+                                        <option value="ORGANZA">Delicate Organza / Tissue</option>
+                                        <option value="GEORGETTE_CHIFFON">Georgette / Chiffon</option>
+                                        <option value="COTTON_LINEN">Cotton / Linen</option>
+                                        <option value="DESIGNER_HEAVY_WORK">Designer Saree (Heavy Embroidery/Cutwork)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="sareeCount">Number of Sarees *</label>
+                                    <div class="quantity-input-group">
+                                        <button type="button" class="btn-qty" onclick="changeSareeCount(-1)">−</button>
+                                        <input type="number" id="sareeCount" class="form-control text-center" value="1" min="1" max="15" required readonly onchange="updatePriceEstimate()">
+                                        <button type="button" class="btn-qty" onclick="changeSareeCount(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="pleatStyle">Pleat Preference *</label>
+                                    <select id="pleatStyle" class="form-control" required>
+                                        <option value="CLASSIC">Classic Wide Pleats (5 to 6 Pleats)</option>
+                                        <option value="SLEEK">Sleek Narrow Pleats (7 to 8 Pleats)</option>
+                                        <option value="BOX_FOLD_ONLY">Box Folding with Pre-Pinned Pallu</option>
+                                        <option value="CUSTOM">Custom Drape Style (specify in notes)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="sareeDescription">Saree Description / Color</label>
+                                    <input type="text" id="sareeDescription" class="form-control" placeholder="e.g. Maroon Kanjivaram with gold peacock border">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Event & Schedule -->
+                        <div class="form-section">
+                            <h3 class="form-section-title"><span class="step-badge">3</span> Event & Drop-off Dates</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="eventDate">Muhurtham / Event Date *</label>
+                                    <input type="date" id="eventDate" class="form-control" required min="" onchange="validateDates()">
+                                    <small class="helper-text">Crucial for prioritizing studio scheduling.</small>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="pickupDate">Required Delivery/Pickup Date *</label>
+                                    <input type="date" id="pickupDate" class="form-control" required min="" onchange="validateDates()">
+                                    <small class="helper-text">Must be at least 1 day before the event date.</small>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="deliveryMode">Fulfillment Mode *</label>
+                                    <select id="deliveryMode" class="form-control" required>
+                                        <option value="STUDIO_DROP_PICKUP">Self Drop-off & Pickup at Studio (Free)</option>
+                                        <option value="DOORSTEP_COURIER">Doorstep Courier / Dunzo Pickup & Drop (+₹80)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Customer Details -->
+                        <div class="form-section">
+                            <h3 class="form-section-title"><span class="step-badge">4</span> Contact & Measurements</h3>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="customerName">Full Name *</label>
+                                    <input type="text" id="customerName" class="form-control" placeholder="e.g. Priyadarshini M." required>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="customerPhone">Phone / WhatsApp Number *</label>
+                                    <input type="tel" id="customerPhone" class="form-control" placeholder="e.g. 9876543210" required pattern="[0-9]{10}">
+                                    <small class="helper-text">We send pleating photo previews via WhatsApp.</small>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label for="customerEmail">Email Address</label>
+                                    <input type="email" id="customerEmail" class="form-control" placeholder="e.g. priya@example.com">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label for="customerHeight">Height / Waist (Optional)</label>
+                                    <input type="text" id="customerHeight" class="form-control" placeholder="e.g. Height: 5'4&quot;, Waist: 30 inches">
+                                    <small class="helper-text">Helps us place the pleats at the exact floor length.</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialInstructions">Special Instructions / Drape Notes</label>
+                                <textarea id="specialInstructions" class="form-control" rows="2" placeholder="e.g. Please keep pallu length 2.5 meters for bridal reception drape; pinless pleats preferred."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Live Price Estimate & Submit -->
+                        <div class="booking-footer">
+                            <div class="price-summary">
+                                <span class="summary-label">Estimated Total:</span>
+                                <span class="summary-amount" id="estimated-total-display">₹250</span>
+                                <span class="summary-subtext" id="summary-breakdown-display">(1 saree × ₹250)</span>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-lg" id="submit-booking-btn">Confirm Booking →</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TRACK ORDER TAB -->
+        <section id="tab-track" class="tab-pane">
+            <div class="section-container max-w-700">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Live Order Tracker</h2>
+                    <p class="section-subtitle">Track the steam pressing, pleating, and packaging status of your saree.</p>
+                </div>
+
+                <div class="search-box-card card">
+                    <form id="track-form" onsubmit="handleTrackOrder(event)">
+                        <div class="tracker-input-group">
+                            <input type="text" id="tracker-order-id" class="form-control tracker-input" placeholder="Enter Order Number (e.g. SPP-1001)" required>
+                            <button type="submit" class="btn btn-primary">Track</button>
+                        </div>
+                    </form>
+                    <div class="demo-hints">
+                        <span>Try demo orders: </span>
+                        <a href="javascript:void(0)" onclick="quickTrack('SPP-1001')">SPP-1001</a> • 
+                        <a href="javascript:void(0)" onclick="quickTrack('SPP-1002')">SPP-1002</a>
+                    </div>
+                </div>
+
+                <div id="tracker-result-container" class="tracker-result-area" style="display: none;">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. STUDIO ADMIN PORTAL TAB -->
+        <section id="tab-admin" class="tab-pane">
+            <div class="section-container">
+                <div class="admin-header-row">
+                    <div>
+                        <h2 class="section-title">Studio Staff Operations Portal</h2>
+                        <p class="section-subtitle">Manage saree queues, update stage transitions, and prioritize wedding deadlines.</p>
+                    </div>
+                    <div class="admin-controls">
+                        <button class="btn btn-outline btn-sm" onclick="seedSampleData()">Reset Sample Data</button>
+                        <button class="btn btn-primary btn-sm" onclick="refreshAdminOrders()">Refresh Orders 🔄</button>
+                    </div>
+                </div>
+
+                <!-- Admin Metrics -->
+                <div class="admin-metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-val" id="metric-total-orders">0</span>
+                        <span class="metric-label">Total Bookings</span>
+                    </div>
+                    <div class="metric-card metric-urgent">
+                        <span class="metric-val" id="metric-urgent-orders">0</span>
+                        <span class="metric-label">🚨 Event &lt; 48 Hrs</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-val" id="metric-in-progress">0</span>
+                        <span class="metric-label">Currently Pleating</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-val" id="metric-ready">0</span>
+                        <span class="metric-label">Ready for Pickup</span>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="card table-card">
+                    <div class="table-toolbar">
+                        <input type="text" id="admin-search-input" class="form-control search-input-sm" placeholder="Search by customer, phone, or order #..." oninput="filterAdminOrders()">
+                        <select id="admin-status-filter" class="form-control select-sm" onchange="filterAdminOrders()">
+                            <option value="ALL">All Statuses</option>
+                            <option value="CONFIRMED">CONFIRMED (Awaiting Saree)</option>
+                            <option value="SAREE_RECEIVED">SAREE RECEIVED</option>
+                            <option value="IN_PROGRESS">IN PROGRESS (Steam & Pleat)</option>
+                            <option value="READY_FOR_PICKUP">READY FOR PICKUP</option>
+                            <option value="COMPLETED">COMPLETED</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="styled-table admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order #</th>
+                                    <th>Customer & Phone</th>
+                                    <th>Saree & Fabric</th>
+                                    <th>Event Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-orders-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-icon">🎉</div>
+            <h2 class="modal-title">Booking Confirmed!</h2>
+            <p class="modal-text">Your saree pre-pleating order has been successfully registered in our studio queue.</p>
+            
+            <div class="order-id-badge">
+                <span class="label">Your Order Tracking Code:</span>
+                <span class="code" id="modal-order-number">SPP-2026-0000</span>
+            </div>
+
+            <div class="modal-details" id="modal-details-summary">
+                <!-- Injected via JS -->
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-primary btn-block" onclick="closeModalAndTrack()">Track Live Status Now →</button>
+                <button class="btn btn-outline btn-block" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="brand-title">DrapeCraft Studio</span>
+                <p>Enterprise-grade Saree Pre-Pleating, Box Folding & Bridal Care.</p>
+            </div>
+            <div class="footer-links">
+                <span>Free Tier Architecture • Spring Boot 3.x • Java 25 • Docker GHCR</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
